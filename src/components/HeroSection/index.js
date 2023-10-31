@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect"
 import HeroImg from "../../images/HeroImg.jpg";
+import HeroBgAnimation from '../../HeroBgAnimation';
 
 const HeroContainer=styled.div`
     background: ${({ theme }) => theme.card_light};
@@ -208,6 +209,7 @@ const Hero = () => {
         <div id="about">
             <HeroContainer>
                 <HeroBg>
+                   <HeroBgAnimation/>
                 </HeroBg>
                 <HeroInnerContainer>
                     <HeroLeftContainer>
