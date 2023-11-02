@@ -1,6 +1,18 @@
 import React from 'react';
 import styled from "styled-components";
 
+const Document = styled.img`
+    display:none;
+    height:70px;
+    width:fit-content;
+    background-color:#000;
+    border-radius:10px;
+    &:hover{
+        cursor:pointer;
+        opacity:0.8;
+    }
+`;
+
 const Card=styled.div`
     width: 650px;
     border-radius: 10px;
@@ -21,6 +33,9 @@ const Card=styled.div`
         padding: 10px;
         gap: 8px;
         width: 300px;
+    }
+    &:hover ${Document}{
+        display: flex;
     }
     border: 0.1px solid #306EE8;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
@@ -90,7 +105,7 @@ const Skills = styled.div`
     width: 100%;
     display: flex;
     gap: 12px;
-    margin-top: -10px;
+    margin-top:10px;
 `;
 
 const ItemWrapper = styled.div`
@@ -124,21 +139,25 @@ const ExperienceCard = ({ experience }) => {
                     <Duration>{experience.date}</Duration>
                 </Body>
             </Top>
-            <Description>{experience.desc}</Description>
-            { experience?.skills && 
-                <>
-                    <br />
-                    <Skills>
-                        <B>Skills:</B>
-                        <ItemWrapper>
-                            {experience.skills.map((skill)=>(
-                                <Skill>• {skill}</Skill>
-                            ))}
-                        </ItemWrapper>
-                    </Skills>
-                </>
-            }
-            {/* <a href={experience.doc} target="new"></a> */}
+            <Description>
+                {experience.desc}
+                { experience?.skills && 
+                    <>
+                        <br />
+                        <Skills>
+                            <B>Skills:</B>
+                            <ItemWrapper>
+                                {experience.skills.map((skill)=>(
+                                    <Skill>• {skill}</Skill>
+                                ))}
+                            </ItemWrapper>
+                        </Skills>
+                    </>
+                }
+            </Description>
+            <a href={experience.doc} target="new">
+                <Document src={experience.doc}/>
+            </a>
         </Card>
     )
 };

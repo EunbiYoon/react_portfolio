@@ -22,6 +22,7 @@ const Wrapper =styled.div`
     gap: 12px;
     @media (max-width: 960px) {
         flex-direction: column;
+    }
 `;
 
 const Title=styled.div`
