@@ -4,29 +4,33 @@ import { useState } from 'react';
 import ProjectCard from '../Cards/ProjectCard';
 import { projects } from '../../data/constants'
 
-export const Container = styled.div`
+const Container = styled.div`
+    background: linear-gradient(343.07deg, rgba(132, 59, 206, 0.06) 5.71%, rgba(132, 59, 206, 0) 64.83%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     z-index: 1;
     align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%,100% 98%, 0 100%);
 `;
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1350px;
+    padding: 10px 0px 100px 0;
+    gap: 12px;
     @media (max-width: 960px) {
         flex-direction: column;
     }
 `;
 
-export const Title = styled.div`
+const Title = styled.div`
     font-size: 42px;
     text-align: center;
     font-weight: 600;
@@ -38,7 +42,7 @@ export const Title = styled.div`
     }
 `;
 
-export const Desc = styled.div`
+const Desc = styled.div`
     font-size: 18px;
     text-align: center;
     max-width: 600px;
@@ -49,7 +53,7 @@ export const Desc = styled.div`
     }
 `;
 
-export const ToggleGroup = styled.div`
+const ToggleGroup = styled.div`
     display: flex;
     border: 1.5px solid ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.primary};
@@ -62,7 +66,7 @@ export const ToggleGroup = styled.div`
     }
 `
 
-export const ToggleButton = styled.div`
+const ToggleButton = styled.div`
     padding: 8px 18px;
     border-radius: 6px;
     cursor: pointer;
@@ -80,13 +84,13 @@ export const ToggleButton = styled.div`
     }
 `;
 
-export const Divider = styled.div`
+const Divider = styled.div`
     width: 1.5px;
     background: ${({ theme }) => theme.primary};
 `;
 
 
-export const CardContainer = styled.div`
+const CardContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
