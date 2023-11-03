@@ -8,6 +8,8 @@ import Skills from './components/Skills';
 import Education from './components/Edutcation';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 
 const Body=styled.div`
@@ -37,7 +39,9 @@ function App() {
           <Projects />
           <Wrapper>
             <Education />
+            <Contact />
           </Wrapper>
+          <Footer />
         </Body>
       </Router>
     </ThemeProvider>
