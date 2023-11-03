@@ -7,6 +7,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { education } from "../../data/constants";
+import EducationCard from '../Cards/EducationCard';
 
 const Container = styled.div`
     display: flex;
@@ -78,10 +79,10 @@ const Education = () => {
                 <Desc>My education has been a journey of self-discovery and growth. My educational details are as follows.</Desc>
                 <TimeLineSection>
                     <Timeline>
-                        { education.map((experience, index)=>(
+                        { education.map((education, index)=>(
                             <TimelineItem>
                                 <TimelineContent sx={{py: '12px', px:2}}>
-                                    <div experience={education}>Hi</div>
+                                    <EducationCard education={education} />
                                 </TimelineContent>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary"/>

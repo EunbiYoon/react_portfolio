@@ -63,7 +63,7 @@ const Body = styled.div`
     flex-direction: column; 
 `;
 
-const Role = styled.div`
+const Name = styled.div`
     font-size: 18px;
     font-weight: 600;
     color: ${({ theme }) => theme.text_primary + 99};
@@ -72,7 +72,7 @@ const Role = styled.div`
     }
 `;
 
-const Company = styled.div`
+const Degree = styled.div`
     font-size: 14px;
     font-weight: 500;
     color: ${({ theme }) => theme.text_secondary + 99};
@@ -81,7 +81,7 @@ const Company = styled.div`
     }
 `;
 
-const Duration = styled.div`
+const Date = styled.div`
     font-size: 12px;
     font-weight: 400;
     color: ${({ theme }) => theme.text_secondary + 80};
@@ -91,42 +91,33 @@ const Duration = styled.div`
 `;
 
 const Description = styled.div`
-    width:100%;
-    font-size:15px;
-    font-weight:400;
-    color: ${({ theme }) => theme.text_primary + 99};
-    margin-bottom:10px;
-    @media only screen and (max-width: 768px){
-        font-size: 12px;
-    } 
-`;
-
-const Skills = styled.div`
     width: 100%;
-    display: flex;
-    gap: 12px;
-    margin-top:10px;
-`;
-
-const ItemWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-`;
-
-const Skill = styled.div`
     font-size: 15px;
     font-weight: 400;
     color: ${({ theme }) => theme.text_primary + 99};
+    margin-bottom: 10px;
     @media only screen and (max-width: 768px){
         font-size: 12px;
     }
 `;
 
-const B = styled.div`
-    color:#fff;
+const Span = styled.span`
+    overflow: hidden;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 `;
 
+const Grade = styled.div`
+    font-size: 14px;
+    font-weight: 500;
+    color: ${({ theme }) => theme.text_secondary + 99};
+    @media only screen and (max-width: 768px){
+        font-size: 12px;
+    }
+`;
 
 const EducationCard = ({ education }) => {
     return (
@@ -139,25 +130,10 @@ const EducationCard = ({ education }) => {
                     <Date>{education.date}</Date>
                 </Body>
             </Top>
-            {/* <Description>
-                {experience.desc}
-                { experience?.skills && 
-                    <>
-                        <br />
-                        <Skills>
-                            <B>Skills:</B>
-                            <ItemWrapper>
-                                {experience.skills.map((skill)=>(
-                                    <Skill>• {skill}</Skill>
-                                ))}
-                            </ItemWrapper>
-                        </Skills>
-                    </>
-                }
+            <Grade>{education.grade}</Grade>
+            <Description>
+                <Span>{education.desc}</Span>
             </Description>
-            <a href={experience.doc} target="new">
-                <Document src={experience.doc}/>
-            </a> */}
         </Card>
     )
 };
